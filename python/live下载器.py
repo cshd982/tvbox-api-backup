@@ -234,9 +234,9 @@ def scan_interfaces():
             continue
 
         if isinstance(data, list):
-    lives = []
-else:
-    lives = data.get("lives", [])
+            lives = []
+        else:
+            lives = data.get("lives", [])
         if not isinstance(lives, list):
             continue
 
