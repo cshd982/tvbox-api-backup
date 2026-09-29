@@ -233,7 +233,10 @@ def scan_interfaces():
             print(f"  跳过 {json_file.name}: {e}")
             continue
 
-        lives = data.get("lives", [])
+        if isinstance(data, list):
+    lives = []
+else:
+    lives = data.get("lives", [])
         if not isinstance(lives, list):
             continue
 
