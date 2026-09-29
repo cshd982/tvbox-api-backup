@@ -1,0 +1,780 @@
+{
+  "spider": "https://mpimg.cn/down.php/d479d37ee36fa366b646f77d17b76fb1.jar",
+  "logo": "https://mpimg.cn/down.php/7c35e9376677a03556efe5193bf23cec.jpg",
+  "sites": [
+    {
+      "key": "jueson",
+      "name": "🏠主页┃豆瓣",
+      "type": 3,
+      "api": "csp_DouDou",
+      "searchable": 0,
+      "quickSearch": 0,
+      "indexs": 1,
+      "filterable": 1
+    },
+    {
+      "key": "短剧┃搜索1",
+      "name": "🏠短剧┃搜1",
+      "type": 3,
+      "api": "https://mpimg.cn/down.php/7e246e896fa4cf52866921b818d7e8cb.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "短剧搜索",
+      "name": "🏠短剧┃搜2",
+      "type": 3,
+      "api": "https://mpimg.cn/down.php/18b8bebbf7b64d39a1e3a90c83a86642.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "fy",
+      "name": "♨️枫叶｜免扫",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/fy.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "华数",
+      "name": "🌀华数┃1920",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/华数.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "七猫短剧",
+      "name": "🎬七猫┃短剧",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/qmdj.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "七星短剧",
+      "name": "🎬七星丨短剧",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/qxdj.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "星芽短剧",
+      "name": "🎬星芽┃短剧",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/星芽短剧.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "爱听音乐",
+      "name": "📻爱听┃音乐",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/爱听音乐.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "网络直播",
+      "name": "📺网络┃点播",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/网络直播.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "哔哩直播",
+      "name": "📺哔哩┃点播",
+      "type": 3,
+      "api": "https://gh-proxy.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/哔哩直播.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "影视聚合五合一V2.py",
+      "name": "影视聚合五合一",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/影视聚合五合一V2.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "py_央视频.py",
+      "name": "央视频",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/py_央视频.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "红果短剧最终版 (1).py",
+      "name": "红果短剧最终版",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/红果短剧最终版 (1).py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "影探4K-修复版.py",
+      "name": "影探4K-修复版",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/影探4K-修复版.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "芒果TV.爱奇艺.py",
+      "name": "芒果TV.爱奇艺.py",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/芒果TV.爱奇艺.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "蝴蝶影院.py",
+      "name": "蝴蝶影院",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/蝴蝶影院.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "合并",
+      "name": "合并",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/合并.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "爱影视 PY",
+      "name": "👌爱影视丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv159爱影视.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "猎手PY",
+      "name": "👌猎手丨[1080p影视]",
+      "type": 3,
+      "api": "https://mpimg.cn/down.php/60fab5ff33f0b0fd88f099ae3be708bf.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "pianku_py",
+      "name": "👌片库丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv263片库TV.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "兄弟PY",
+      "name": "👌兄弟丨[1080p影视]",
+      "type": 3,
+      "api": "https://mpimg.cn/down.php/b1cdcf76574a0cb24d5b937d46458cdf.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "奇奇影视PY",
+      "name": "👌奇奇影视丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv303奇奇影视.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "金牌影视PY",
+      "name": "👌金牌影视丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv323金牌影视.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "茶杯狐PY",
+      "name": "👌茶杯狐丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv343茶杯狐.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "简云PY",
+      "name": "👌简云丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv363简云.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "影视天堂 PY",
+      "name": "👌影视天堂丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv383影视天堂.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "小蜜蜂PY",
+      "name": "👌小蜜蜂丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv403小蜜蜂.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "巴不得看看PY",
+      "name": "👌巴不得看看丨[1080p影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv423巴不得看看.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "枫叶影院PY",
+      "name": "👀枫叶影院丨[4k影视]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv529枫叶影院.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "🔴果PY",
+      "name": "👌🔴果丨PY",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv765hongguo.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "央视大全py",
+      "name": "📺央视大全[🍵]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4169央视大全.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "wangluozb.py",
+      "name": "🐅wlzbpy[网络直播]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4191wlzb.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "py_yymp3",
+      "name": "🎶yymp3|[音乐]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4245YYMP3音乐网.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "hige音乐网",
+      "name": "🎶hige|[音乐]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4267hige.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "DJ音乐网 PY",
+      "name": "👌DJ音乐网丨[音乐]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4289DJ音乐网.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "🙈华数",
+      "name": "🙈桦树|[少儿]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4519桦树.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "少儿教育PY",
+      "name": "👌少儿教育丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4579少儿教育.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童编程PY",
+      "name": "👌儿童编程丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4599儿童编程.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童识字PY",
+      "name": "👌儿童识字丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4619儿童识字.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童拼音.PY",
+      "name": "👌儿童拼音.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4639儿童拼音.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童硬笔.PY",
+      "name": "👌儿童硬笔.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4659儿童硬笔.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童口才.PY",
+      "name": "👌儿童口才.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4679儿童口才.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童武术.PY",
+      "name": "👌儿童武术.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4699儿童武术.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童绘画.PY",
+      "name": "👌儿童绘画.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4719儿童绘画.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童百科.PY",
+      "name": "👌儿童百科.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4739儿童百科.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "儿童思维.PY",
+      "name": "👌儿童思维.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4759儿童思维.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "小学教育.PY",
+      "name": "👌小学教育.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4779小学课堂.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "初中教育.PY",
+      "name": "👌初中教育.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4799初中课堂.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+    {
+      "key": "高中教育.PY",
+      "name": "👌高中教育.丨[教育学习]",
+      "type": 3,
+      "api": "http://150.158.52.248/tgyg/lib/apiv4819高中课堂.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ],
+  "parses": [
+    {
+      "name": "解析聚合",
+      "type": 3,
+      "url": "Demo"
+    },
+    {
+      "name": "xy4k",
+      "type": 1,
+      "url": "https://183933.xyz/xiaye.php?url="
+    }
+  ],
+  "lives": [],
+  "rules": [
+    {
+      "name": "农民",
+      "hosts": [
+        "toutiaovod.com"
+      ],
+      "regex": [
+        "video/tos/cn"
+      ]
+    },
+    {
+      "name": "火山",
+      "hosts": [
+        "huoshan.com"
+      ],
+      "regex": [
+        "item_id="
+      ]
+    },
+    {
+      "name": "抖音",
+      "hosts": [
+        "douyin.com"
+      ],
+      "regex": [
+        "is_play_url="
+      ]
+    },
+    {
+      "name": "饭团点击",
+      "hosts": [
+        "dadagui",
+        "freeok",
+        "dadagui"
+      ],
+      "script": [
+        "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();"
+      ]
+    },
+    {
+      "name": "毛驴点击",
+      "hosts": [
+        "www.maolvys.com"
+      ],
+      "script": [
+        "document.getElementsByClassName('swal-button swal-button--confirm')[0].click()"
+      ]
+    },
+    {
+      "name": "ofiii",
+      "hosts": [
+        "www.ofiii.com"
+      ],
+      "script": [
+        "const play=document.getElementsByClassName('play_icon')[0],event=new MouseEvent('click',{bubbles:!0,cancelable:!0,view:window,screenX:100,screenY:100,clientX:50,clientY:50,button:0,shiftKey:!1,ctrlKey:!1,altKey:!1,metaKey:!1,modifierState:0});play.dispatchEvent(event);"
+      ]
+    }
+  ],
+  "doh": [
+    {
+      "name": "Google",
+      "url": "https://dns.google/dns-query",
+      "ips": [
+        "8.8.4.4",
+        "8.8.8.8"
+      ]
+    },
+    {
+      "name": "Cloudflare",
+      "url": "https://cloudflare-dns.com/dns-query",
+      "ips": [
+        "1.1.1.1",
+        "1.0.0.1",
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ]
+    },
+    {
+      "name": "AdGuard",
+      "url": "https://dns.adguard.com/dns-query",
+      "ips": [
+        "94.140.14.140",
+        "94.140.14.141"
+      ]
+    },
+    {
+      "name": "DNSWatch",
+      "url": "https://resolver2.dns.watch/dns-query",
+      "ips": [
+        "84.200.69.80",
+        "84.200.70.40"
+      ]
+    },
+    {
+      "name": "Quad9",
+      "url": "https://dns.quad9.net/dns-quer",
+      "ips": [
+        "9.9.9.9",
+        "149.112.112.112"
+      ]
+    }
+  ],
+  "hosts": [
+    "cache.ott.*.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
+    "cache.ott.ystenlive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
+    "cache.ott.bestlive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
+    "cache.ott.wasulive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
+    "cache.ott.fifalive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
+    "cache.ott.hnbblive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com"
+  ],
+  "flags": [
+    "youku",
+    "优酷",
+    "优 酷",
+    "优酷视频",
+    "qq",
+    "腾讯",
+    "腾 讯",
+    "腾讯视频",
+    "iqiyi",
+    "qiyi",
+    "奇艺",
+    "爱奇艺",
+    "爱 奇 艺",
+    "m1905",
+    "xigua",
+    "letv",
+    "leshi",
+    "乐视",
+    "乐 视",
+    "sohu",
+    "搜狐",
+    "搜 狐",
+    "搜狐视频",
+    "tudou",
+    "pptv",
+    "mgtv",
+    "芒果",
+    "imgo",
+    "芒果TV",
+    "芒 果 T V",
+    "bilibili",
+    "哔 哩",
+    "哔 哩 哔 哩"
+  ],
+  "ijk": [
+    {
+      "group": "软解码",
+      "options": [
+        {
+          "category": 4,
+          "name": "opensles",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "overlay-format",
+          "value": "842225234"
+        },
+        {
+          "category": 4,
+          "name": "framedrop",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "soundtouch",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "start-on-prepared",
+          "value": "1"
+        },
+        {
+          "category": 1,
+          "name": "http-detect-range-support",
+          "value": "0"
+        },
+        {
+          "category": 1,
+          "name": "fflags",
+          "value": "fastseek"
+        },
+        {
+          "category": 2,
+          "name": "skip_loop_filter",
+          "value": "48"
+        },
+        {
+          "category": 4,
+          "name": "reconnect",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "enable-accurate-seek",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-auto-rotate",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-handle-resolution-change",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-hevc",
+          "value": "0"
+        },
+        {
+          "category": 1,
+          "name": "dns_cache_timeout",
+          "value": "600000000"
+        }
+      ]
+    },
+    {
+      "group": "硬解码",
+      "options": [
+        {
+          "category": 4,
+          "name": "opensles",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "overlay-format",
+          "value": "842225234"
+        },
+        {
+          "category": 4,
+          "name": "framedrop",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "soundtouch",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "start-on-prepared",
+          "value": "1"
+        },
+        {
+          "category": 1,
+          "name": "http-detect-range-support",
+          "value": "0"
+        },
+        {
+          "category": 1,
+          "name": "fflags",
+          "value": "fastseek"
+        },
+        {
+          "category": 2,
+          "name": "skip_loop_filter",
+          "value": "48"
+        },
+        {
+          "category": 4,
+          "name": "reconnect",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "enable-accurate-seek",
+          "value": "0"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-auto-rotate",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-handle-resolution-change",
+          "value": "1"
+        },
+        {
+          "category": 4,
+          "name": "mediacodec-hevc",
+          "value": "1"
+        },
+        {
+          "category": 1,
+          "name": "dns_cache_timeout",
+          "value": "600000000"
+        }
+      ]
+    }
+  ],
+  "ads": [
+    "static-mozai.4gtv.tv"
+  ]
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<title>海量接口搬运备份公共代码框架</title>
+<style>
+/* ============================================================
+   公共 CSS
+   ============================================================ */
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { height:100%; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background:#eef2f7; color:#1a2b3d;
+  padding:20px 14px 10px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+button:focus, button:focus-visible, input:focus, input:focus-visible,
+.nav-tab:focus, .copy-btn:focus { outline:none !important; }
+
+/* 容器 */
+.container {
+  max-width:820px;
+  margin:0 auto;
+  position:relative;
+  width:100%;
+  overflow-x:hidden;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* 模式切换 */
+#modeToggleBtn {
+  position:absolute; top:14px; left:10px; z-index:999;
+  width:56px; padding:6px 4px; border-radius:50px;
+  border:1px solid #4a9eff; background:#fff; color:#4a9eff;
+  font-size:.58rem; line-height:1.3; text-align:center; cursor:pointer;
+}
+
+/* 标题 */
+.header-block { text-align:center; margin-bottom:16px; padding-top:14px; }
+h1 { font-size:1.35rem; font-weight:700; color:#0a1a2b; }
+h1 .header-logo {
+  width:2rem; height:2rem; border-radius:50%; border:1px solid #4a9eff;
+  object-fit:cover; vertical-align:-.5rem; margin-right:8px;
+}
+.header-divider { height:1px; background:#e4ebf3; margin:12px 0; }
+.subtitle { font-size:.78rem; color:#7a8fa3; line-height:1.6; }
+
+/* 搜索框 */
+.search-box {
+  width:100%; padding:10px 16px; border:1px solid #d4dbe5;
+  border-radius:50px; font-size:.92rem; background:#fff; outline:none; -webkit-appearance:none;
+}
+body.simple-mode .search-box { margin-bottom:20px; }
+body:not(.simple-mode) .search-box { margin-bottom:14px; }
+
+/* 主卡片 */
+.main-card {
+  background:#fff; border-radius:8px; padding:20px 22px 18px;
+  border:1px solid #d4dbe5;
+  width:100%; overflow-x:hidden; flex:1;
+}
+
+/* 导航栏 */
+.nav-tabs {
+  display:flex; gap:10px; margin-bottom:16px;
+  justify-content:center; flex-wrap:wrap;
+}
+.nav-tab {
+  padding:7px 24px; border:1.5px solid #4a9eff; border-radius:40px;
+  background:#fff; color:#4a9eff;
+  font-size:.82rem; font-weight:500; cursor:pointer; white-space:nowrap; flex-shrink:0;
+}
+.nav-tab.active { background:#4a9eff; color:#fff; }
+.nav-tab:active { transform:scale(.96); }
+
+/* 面板 */
+.tab-panel { display:none; width:100%; }
+.tab-panel.active { display:block; }
+
+/* 列表项 */
+.api-list { display:flex; flex-direction:column; width:100%; }
+.api-item { padding:14px 0; border-bottom:1px solid #e4ebf3; }
+.api-item:last-child { border-bottom:none; }
+.api-item.hidden { display:none !important; }
+.api-item-header { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.api-item-name { font-size:1rem; font-weight:700; color:#0a1a2b; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0; }
+.api-item-meta { display:flex; align-items:center; gap:8px; font-size:.72rem; white-space:nowrap; flex-shrink:0; }
+.badge-new { color:#16a34a; font-weight:600; }
+.badge-old { color:#ca8a04; font-weight:600; }
+.api-item-urls { display:flex; flex-direction:column; gap:6px; }
+.url-line {
+  display:flex; align-items:center; gap:8px; padding:6px 14px;
+  background:#f4f8fc; border:1px solid #e0e8f0; border-radius:50px; min-width:0;
+}
+.url-tag { font-size:.68rem; font-weight:600; color:#3a5a7a; background:#d8e8f8; padding:2px 14px; border-radius:50px; white-space:nowrap; flex-shrink:0; }
+.url-text { font-size:.78rem; color:#2563eb; word-break:break-all; overflow-wrap:break-word; line-height:1.4; flex:1; min-width:0; }
+
+.copy-btn {
+  flex-shrink:0; background:#4a9eff; color:#fff; border:none; border-radius:30px;
+  padding:0 14px; font-size:.7rem; font-weight:500; cursor:pointer; height:26px;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:background .15s, transform .05s; white-space:nowrap; margin-left:auto;
+  position:relative; z-index:2; touch-action:manipulation; -webkit-user-select:none; user-select:none;
+}
+.copy-btn:active { background:#2a7ed9; transform:scale(.96); }
+.copy-btn.copied { background:#3b9b6c; }
+
+.loading { text-align:center; color:#8fa3b8; padding:60px 0; font-size:.88rem; }
+.error-msg { text-align:center; color:#dc2626; padding:16px 20px; font-size:.8rem; background:#fef2f2; border:1px solid #fecaca; border-radius:4px; margin:12px 0; word-break:break-all; }
+
+/* footer */
+.page-footer { text-align:center; padding:24px 0 10px; font-size:.7rem; color:#8fa3b8; line-height:1.8; margin-top:auto; }
+
+/* 简洁模式 */
+body.simple-mode .nav-tabs { display:none !important; }
+body.simple-mode #live-panel,
+body.simple-mode #download-panel,
+body.simple-mode #danmu-panel,
+body.simple-mode #about-panel { display:none !important; }
+body.simple-mode #api-panel { display:block !important; }
+
+/* 空壳面板 */
+.panel-placeholder {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-height:200px; color:#b0bec5; text-align:center; padding:40px 20px;
+}
+.panel-placeholder .placeholder-icon { font-size:2.5rem; margin-bottom:12px; opacity:.5; }
+.panel-placeholder .placeholder-text { font-size:.85rem; }
+
+/* 移动端 */
+@media (max-width:600px) {
+  body { padding:14px 8px 6px; }
+  #modeToggleBtn { top:10px; left:6px; width:48px; font-size:.52rem; padding:4px 2px; }
+  .main-card { padding:14px 14px 12px; }
+  .nav-tab { padding:6px 18px; font-size:.75rem; }
+  .api-item { padding:12px 0; }
+  .url-line { padding:6px 10px; gap:6px; }
+  .copy-btn { font-size:.62rem; padding:0 10px; height:24px; }
+}
+</style>
+</head>
+
+<body class="simple-mode">
+
+<div class="container">
+  <button id="modeToggleBtn">切换<br>全能版</button>
+
+  <div class="header-block">
+    <h1><img class="header-logo" src="https://0.12yue.de5.net/tvbox/x/jueson.jpg" alt="Logo">海量接口搬运备份</h1>
+    <div class="header-divider"></div>
+    <p class="subtitle">备用数据源，防屏不迷路<br>QQ交流群：1067685939</p>
+  </div>
+
+  <div class="main-card">
+    <div class="nav-tabs" id="navTabs"></div>
+    <input class="search-box" id="search" type="text" placeholder="🔍 搜索..." oninput="globalSearch()">
+
+    <!-- 点播 -->
+    <div class="tab-panel active" id="api-panel">
+      <div class="api-list" id="listContainer">
+        <div class="loading" id="apiLoading">⏳ 正在加载接口列表...</div>
+      </div>
+    </div>
+    <!-- 直播 -->
+    <div class="tab-panel" id="live-panel">
+      <div class="panel-placeholder"><div class="placeholder-icon">📺</div><div class="placeholder-text">直播内容加载中...</div></div>
+    </div>
+    <!-- 弹幕 -->
+    <div class="tab-panel" id="danmu-panel">
+      <div class="panel-placeholder"><div class="placeholder-icon">💬</div><div class="placeholder-text">弹幕内容加载中...</div></div>
+    </div>
+    <!-- 下载 -->
+    <div class="tab-panel" id="download-panel">
+      <div class="panel-placeholder"><div class="placeholder-icon">📦</div><div class="placeholder-text">下载内容加载中...</div></div>
+    </div>
+    <!-- 关于 -->
+    <div class="tab-panel" id="about-panel">
+      <div class="panel-placeholder"><div class="placeholder-icon">ℹ️</div><div class="placeholder-text">关于内容加载中...</div></div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>本站接口资源由【误道者】整理。所有资源均来自互联网，版权归原作者所有。仅供测试学习使用，请勿用于违法及商业用途，请勿付费购买。如涉及侵权，请联系删除。 QQ 群：1067685939。</p>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   公共 JS（含刷新记住面板 + localStorage）
+   ============================================================ */
+
+const MODE_KEY = 'site_mode';
+const TAB_KEY = 'current_tab';                       // ✅ 面板缓存 key
+const VALID_TABS = ['api','live','download','danmu','about']; // ✅ 合法面板白名单
+
+const btn = document.getElementById('modeToggleBtn');
+const searchBox = document.getElementById('search');
+const mainCard = document.querySelector('.main-card');
+const navTabs = document.getElementById('navTabs');
+
+const API_DOMAINS = [
+  {tag:"备份一线", base:"https://0.12yue.de5.net/tvbox/"},
+  {tag:"备份二线", base:"https://0.cdz.qzz.io/tvbox/"},
+  {tag:"备份三线", base:"https://0.wdzb.eu.cc/tvbox/"}
+];
+
+const API_WEIGHTS = {
+  "轮替占位.json":1,"幸福年年.json":2,"饭太硬.json":4,"肥猫.json":5,
+  "摸鱼.json":6,"王二小.json":7,"集多.json":8,"潇洒.json":9,"小米.json":10,
+  "嗷呜.json":11,"南风.json":12,"小虎斑.json":13
+};
+
+const ROTATE_KEYWORDS = ["模糊搜索","模糊搜索"];
+
+let currentMode = localStorage.getItem(MODE_KEY) || 'simple';
+
+// ✅ 从缓存读取上次面板，非法值回退点播
+let currentTabId = VALID_TABS.includes(localStorage.getItem(TAB_KEY))
+  ? localStorage.getItem(TAB_KEY)
+  : 'api';
+
+let topSeed = Date.now();
+let rawListText = null;
+
+document.body.className = currentMode + '-mode';
+updateBtnText();
+positionSearchBox();
+
+/* ===== 全局复制 ===== */
+document.addEventListener('click', function(e) {
+  const copyBtn = e.target.closest('.copy-btn');
+  if (!copyBtn) return;
+  e.preventDefault(); e.stopPropagation();
+  const url = copyBtn.getAttribute('data-url');
+  if (!url) return;
+  const done = () => {
+    const originalText = copyBtn.textContent;
+    copyBtn.textContent = '✅ 已复制';
+    copyBtn.classList.add('copied');
+    setTimeout(() => { copyBtn.textContent = originalText; copyBtn.classList.remove('copied'); }, 1500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(fb);
+  } else { fb(); }
+  function fb() {
+    const input = document.createElement('input'); input.value = url;
+    input.style.position='fixed'; input.style.opacity='0';
+    document.body.appendChild(input); input.focus(); input.select();
+    try{document.execCommand('copy');}catch(_){}
+    document.body.removeChild(input); done();
+  }
+});
+
+/* ===== 工具 ===== */
+function getTopItem(rotateItems) {
+  if (!rotateItems || !rotateItems.length) return null;
+  if (rotateItems.length === 1) return rotateItems[0];
+  return rotateItems[Math.abs(Math.floor(Math.sin(topSeed)*10000))%rotateItems.length];
+}
+function formatDateToChinese(d) {
+  if(!d||d.length!==8) return '----';
+  return d.slice(0,4)+'年'+d.slice(4,6)+'月'+d.slice(6,8)+'日';
+}
+function isRecent(d) {
+  if(!d||d.length!==8) return false;
+  const y=parseInt(d.slice(0,4)),m=parseInt(d.slice(4,6))-1,day=parseInt(d.slice(6,8));
+  return (Date.now()-new Date(y,m,day).getTime())/86400000 <= 2;
+}
+
+/* ===== 搜索 ===== */
+function globalSearch() {
+  const kw=(searchBox.value||'').toLowerCase().trim();
+  document.querySelectorAll('#api-panel .api-item').forEach(e=>{
+    const n=e.getAttribute('data-name')||'';
+    e.classList.toggle('hidden',!n.includes(kw));
+  });
+  // 子类页面需自行扩展其他面板的搜索过滤
+}
+
+/* ===== 点播加载 ===== */
+async function fetchListText() {
+  if(rawListText!==null) return rawListText;
+  const res = await fetch('list.txt?t='+Date.now()+'&r='+Math.random(), {cache:'no-store'});
+  if(!res.ok) throw new Error('HTTP '+res.status);
+  rawListText = await res.text(); return rawListText;
+}
+function parseItems(text) {
+  if(!text||!text.trim()) return [];
+  return text.trim().split('\n').filter(l=>l.trim()).map(line=>{
+    const p=line.split('|').map(s=>s.trim()); if(!p[0]) return null;
+    return {file:p[0],name:p[0].replace(/\.json$/i,''),date:p[1]||'',size:p[2]||'',origUrl:p[3]||'',weight:API_WEIGHTS.hasOwnProperty(p[0])?API_WEIGHTS[p[0]]:999};
+  }).filter(Boolean);
+}
+function renderApi() {
+  const container = document.getElementById('listContainer');
+  fetchListText().then(text=>{
+    const tip=document.getElementById('apiLoading'); if(tip) tip.style.display='none';
+    let items=parseItems(text);
+    if(!items.length){container.innerHTML='<div class="error-msg">⚠️ 接口列表为空，请检查 list.txt</div>';return;}
+    const ri=items.filter(i=>ROTATE_KEYWORDS.some(kw=>i.name.toLowerCase().includes(kw.toLowerCase())));
+    const top=getTopItem(ri); if(top) top.weight=Number.MIN_SAFE_INTEGER;
+    items.sort((a,b)=>a.weight-b.weight);
+    let html='';
+    items.forEach(it=>{
+      const isNew=isRecent(it.date); let lines='';
+      if(it.origUrl) lines+=`<div class="url-line"><span class="url-tag">原始线路</span><span class="url-text">${it.origUrl}</span><button class="copy-btn" data-url="${it.origUrl}">复制</button></div>`;
+      API_DOMAINS.forEach(d=>{const u=d.base+it.name+'.json';lines+=`<div class="url-line"><span class="url-tag">${d.tag}</span><span class="url-text">${u}</span><button class="copy-btn" data-url="${u}">复制</button></div>`;});
+      html+=`<div class="api-item" data-name="${it.name.toLowerCase()}"><div class="api-item-header"><div class="api-item-name" title="${it.name}">${it.name}</div><div class="api-item-meta"><span class="${isNew?'badge-new':'badge-old'}">备份时间 ${formatDateToChinese(it.date)}</span>${it.size?'&nbsp;&nbsp;'+it.size:''}</div></div><div class="api-item-urls">${lines}</div></div>`;
+    });
+    container.innerHTML=html;
+  }).catch(err=>{
+    const tip=document.getElementById('apiLoading'); if(tip) tip.style.display='none';
+    container.innerHTML=`<div class="error-msg">❌ 接口加载失败：${err.message||err}</div>`;
+  });
+}
+
+/* ===== 导航 ===== */
+const tabsData = [
+  {id:"api",label:"点播",hideSearch:false},
+  {id:"live",label:"直播",hideSearch:false},
+  {id:"download",label:"下载",hideSearch:true},
+  {id:"danmu",label:"弹幕",hideSearch:true},
+  {id:"about",label:"关于",hideSearch:true}
+];
+
+function renderTabs() {
+  navTabs.innerHTML=tabsData.map(t=>`<button class="nav-tab ${t.id===currentTabId?'active':''}" data-tab="${t.id}">${t.label}</button>`).join('');
+  navTabs.querySelectorAll('.nav-tab').forEach(tab=>{
+    tab.addEventListener('click',function(){
+      navTabs.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+      this.classList.add('active');
+      currentTabId=this.getAttribute('data-tab');
+
+      // ✅ 写入面板缓存
+      localStorage.setItem(TAB_KEY, currentTabId);
+
+      showPanel(currentTabId);
+    });
+  });
+}
+
+function showPanel(tabId) {
+  if(searchBox){
+    searchBox.value='';
+    document.querySelectorAll('#api-panel .api-item.hidden').forEach(e=>e.classList.remove('hidden'));
+    // 子类页面需自行清除其他面板的搜索隐藏状态
+  }
+
+  // 搜索框显隐控制
+  const t=tabsData.find(t=>t.id===tabId);
+  if(searchBox) searchBox.style.display=(t&&t.hideSearch)?'none':'';
+
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  const panel=document.getElementById(tabId+'-panel');
+  if(panel) panel.classList.add('active');
+
+  if(tabId==='api'){topSeed=Date.now()+Math.random();renderApi();}
+  // 子类页面需在下面扩展其他面板的加载调用
+}
+
+function positionSearchBox() {
+  if(currentMode==='simple'){if(searchBox.parentNode!==mainCard.parentNode) mainCard.parentNode.insertBefore(searchBox,mainCard);}
+  else{if(searchBox.parentNode!==mainCard) navTabs.insertAdjacentElement('afterend',searchBox);}
+}
+function updateBtnText(){btn.innerHTML=currentMode==='simple'?'切换<br>全能版':'切换<br>简洁版';}
+
+/* ===== 模式切换 ===== */
+btn.addEventListener('click',()=>{
+  topSeed=Date.now()+Math.random();
+  currentMode=currentMode==='simple'?'full':'simple';
+  localStorage.setItem(MODE_KEY,currentMode);
+  document.body.className=currentMode+'-mode';
+  updateBtnText();
+
+  if(currentMode!=='simple'){
+    positionSearchBox();
+    renderTabs();
+    showPanel(currentTabId);
+  } else {
+    // ✅ 简洁模式：强制回点播并写缓存
+    currentTabId='api';
+    localStorage.setItem(TAB_KEY,'api');
+    searchBox.style.display='';
+    positionSearchBox();
+    renderApi();
+  }
+});
+
+/* ===== 启动（✅ 修复：根据模式正确恢复面板） ===== */
+renderTabs();
+
+if (currentMode === 'simple') {
+  currentTabId = 'api';
+  localStorage.setItem(TAB_KEY, 'api');
+  renderApi();
+} else {
+  // ✅ 全能模式：恢复上次面板（标签 + 内容一起恢复）
+  showPanel(currentTabId);
+}
+</script>
+</body>
+</html>
