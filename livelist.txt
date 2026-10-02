@@ -4,8 +4,8 @@
 斗鱼一起看.m3u|20261002|172.9K|https://sub.ottiptv.cc/douyuyqk.m3u|饭太硬|okHttp/Mod-1.5.0.0|
 YY轮播.m3u|20261002|113.3K|https://sub.ottiptv.cc/yylunbo.m3u|饭太硬|okHttp/Mod-1.5.0.0|
 Guovin.m3u|20261002|387.1K|https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u|菠菜pro|null|
-B站直播.m3u|20261002|116.2K|https://sub.ottiptv.cc/bililive.m3u|海量直播聚合接口|okHttp/Mod-1.5.0.0|
-Yoursmile.txt|20261002|114.3K|https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt|海量直播聚合接口|okhttp/3.15|
+B站直播.m3u|20261002|116.2K|https://sub.ottiptv.cc/bililive.m3u|嗷呜|okHttp/Mod-1.5.0.0|
+Yoursmile.txt|20261002|114.3K|https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt|南风|okhttp/3.15|
 范明明需开启V6网络.m3u|20260915|12.5K|https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u|饭太硬5线|null|
 Kimentanm.m3u|20260929|21.4K|https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u|饭太硬|null|
 驸马影视电信专线.m3u|20260915|17.0K|http://fmys.top/lib/live.m3u|驸马|null|
