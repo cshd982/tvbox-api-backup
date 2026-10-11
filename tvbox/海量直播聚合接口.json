@@ -1,15 +1,15 @@
 {
   "lives": [
     {
-      "name": "Kimentanm",
-      "url": "https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
-      "ua": "",
-      "source": "饭太硬"
-    },
-    {
       "name": "综合直播",
       "url": "http://193.123.86.190:14888/TV/iptv.php",
       "ua": "bingcha/1.1 (mianfeifenxiang)",
+      "source": "饭太硬"
+    },
+    {
+      "name": "Kimentanm",
+      "url": "https://ghproxy.net/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+      "ua": "",
       "source": "饭太硬"
     },
     {
@@ -59,6 +59,12 @@
       "url": "https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt",
       "ua": "okhttp/3.15",
       "source": "南风"
+    },
+    {
+      "name": "Kimentanm1线1线",
+      "url": "https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+      "ua": "",
+      "source": "海量直播线路"
     }
   ]
 }
