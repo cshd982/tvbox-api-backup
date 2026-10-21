@@ -7,14 +7,14 @@
       "source": "饭太硬"
     },
     {
-      "name": "Kimentanm",
-      "url": "https://ghproxy.net/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+      "name": "牛播一",
+      "url": "http://127.0.0.1:9978/proxy?do=cctva",
       "ua": "",
       "source": "饭太硬"
     },
     {
-      "name": "范明明（需开启V6网络）",
-      "url": "https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u",
+      "name": "Kimentanm",
+      "url": "https://ghproxy.net/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
       "ua": "",
       "source": "饭太硬"
     },
@@ -59,6 +59,12 @@
       "url": "https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt",
       "ua": "okhttp/3.15",
       "source": "南风"
+    },
+    {
+      "name": "范明明（需开启V6网络）",
+      "url": "https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u",
+      "ua": "",
+      "source": "海量直播线路"
     },
     {
       "name": "Kimentanm1线1线",
