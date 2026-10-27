@@ -1,6 +1,12 @@
 {
   "lives": [
     {
+      "name": "Guovin",
+      "url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+      "ua": "",
+      "source": "菠菜pro"
+    },
+    {
       "name": "综合直播",
       "url": "http://193.123.86.190:14888/TV/iptv.php",
       "ua": "bingcha/1.1 (mianfeifenxiang)",
@@ -35,12 +41,6 @@
       "url": "https://sub.ottiptv.cc/yylunbo.m3u",
       "ua": "okHttp/Mod-1.5.0.0",
       "source": "饭太硬"
-    },
-    {
-      "name": "Guovin",
-      "url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
-      "ua": "",
-      "source": "菠菜pro"
     },
     {
       "name": "Kimentanm1线",
